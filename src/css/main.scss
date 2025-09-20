@@ -5,7 +5,7 @@ $accent-color: #ffffff;
 * {
   font-family: monospace;
 }
-
+/* Global Styles */
 html {
   margin: 0;
   padding: 0;
@@ -84,8 +84,8 @@ header.shrink {
   background-color: darken($primary-color, 10%);
   border-radius: 0.3rem;
 }
-/* Section Styling */
 
+/* Section Styling */
 /*About Section */
 #about {
   background: url('../assets/IMG_7594.jpeg') fixed center no-repeat; 
@@ -165,12 +165,24 @@ header.shrink {
 }
 
 .projects-grid {
-  width: 90vw;
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   align-items: start; 
   justify-items: center;   
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* individual project card */
@@ -318,7 +330,6 @@ header.shrink {
 }
 
 /* Skills Section */
-/* REPLACE your existing #skills block with this */
 #skills {
   background: $secondary-color;
   color: $primary-color;
@@ -400,25 +411,10 @@ header.shrink {
     }
   }
 
-  /* Responsive: 2 → 1 column on small screens */
-  @media (max-width: 640px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      width: 100%;
-    }
-
-    .skill-column {
-      padding: 1.2rem;
-      h3 { font-size: 1.4rem; }
-      .skill-icons { font-size: 2rem; gap: 0.75rem; }
-      ul li { font-size: 1rem; }
-    }
-  }
+  
 }
 
 /* Photography Section */
-/* Replace the existing #photography .carousel block with this */
 #photography {
   display: flex; 
   flex-direction: column; 
@@ -428,12 +424,17 @@ header.shrink {
   padding-top: 0rem;
   padding-bottom: 5rem;
   text-align: center;
-  font-size: 2rem;
   min-height: 90vh;
+
+  .photography-title {
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+    font-weight: bold;
+  }
 
   .carousel {
     position: relative;
-    width: 80vw;           
+    width: 80%;           
     margin: 0 auto;
     overflow: hidden;
     border-radius: 1rem;
@@ -527,7 +528,7 @@ header.shrink {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 60vw;        
+    width: 60%;        
     max-width: 1000px;  
     margin: 0 auto;     
     text-align: center;
@@ -601,3 +602,85 @@ footer {
   border-bottom: 1px solid #ccc;
 }
 
+/* Responsive Adjustments */
+
+h1, h2, h3, p, li {
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.5rem);
+}
+
+.about-text,
+.modal-content p,
+.contact-form {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#skills .skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+#photography .carousel {
+  width: min(90vw, 1200px);
+}
+#photography .carousel-slide img {
+  max-height: 70vh;
+}
+
+#contact .contact-form {
+  width: 80vw;
+  max-width: 800px;
+  padding: clamp(1rem, 2vw, 2.5rem);
+}
+#contact .contact-form h2 {
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+}
+
+@media (max-width: 1366px) {
+  header { font-size: 1.6rem; }
+  .skills-title { font-size: 2.2rem; }
+}
+
+@media (max-width: 1100px) {
+  .projects-title { font-size: 1.8rem; }
+  .skill-column h3 { font-size: 1.6rem; }
+  .skill-column ul li { font-size: 1.2rem; }
+}
+
+@media (max-width: 768px) {
+  header { font-size: 1.4rem; }
+  .navbar ul { gap: 1.5rem; }
+  .about-text { font-size: 1.2rem; }
+  .modal-content { width: 95%; height: auto; }
+}
+
+@media (max-width: 480px) {
+  .navbar ul { flex-direction: column; gap: 1rem; }
+  .skills-title { font-size: 2rem; margin-bottom: 3rem; }
+  .contact-form { width: 95vw; }
+}
+
+/* Specific Responsive Adjustments for Skills Section */
+@media (max-width: 1100px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  
+  .skills-grid .skill-column:last-child {
+    grid-column: 1 / -1;     
+    justify-self: center;    
+    max-width: 700px;        
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid .skill-column:last-child {
+    grid-column: auto;
+    justify-self: stretch;
+    max-width: none;
+    margin: 0;
+  }
+}

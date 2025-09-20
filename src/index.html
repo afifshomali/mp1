@@ -4,10 +4,308 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
+        <title>Afif's Portfolio Website</title>
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
     </head>
-    <body>
-        <h1>Hello World! Welcome to MP1</h1>
-        <img src="assets/image.jpg">
-    </body>
+
+
+<body>
+    <header id="header">
+        <div class="header-container">
+            <a class="page-name" href="#">Afif's Portfolio</a>
+            <nav class="navbar" id="">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#photography">Photography</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Me/Intro with a Image background fixed position-->
+    <section id="about" class="stripe">
+    <div class="about-content">
+        <img src="./assets/profilepic.jpg" alt="Profile Picture" class="profile-pic" />
+        <p class="about-text">
+        Hi, I’m Afif. <br> I'm a Data Scientist at Allianz Life & currently finishing
+        up my Masters Degree in Computer Science at UIUC. <br>
+        Welcome to my personal website! <br>
+        You can check out my projects, skills & what I do outside of work. <br>
+        If your interested in having a chat, 
+        feel free to reach out to me through Linked-in or the contact section!
+        </p>
+        <div class="social-icons">
+            <a href="mailto:afif.anthony.shomali@gmail.com" target="_blank">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/afifshomali" target="_blank" >
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/afifshomali" target="_blank">
+                <i class="fa-brands fa-square-github"></i>
+            </a>
+        </div>
+    </div>
+    </section>
+    
+
+    <!-- Modal Section for Projects, use animations for when opening each window -->
+    <section id="projects" class="stripe">
+      <h2 class="projects-title">My Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-item" data-modal="project1">
+          <img src="./assets/airbnb_logo.jpg" alt="Project 1">
+          <div class="overlay">
+            <h3>Airbnb New York City Data Science Project</h3>
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+          </div>
+        </div>
+
+        <div class="modal" id="project1">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="./assets/airbnb_logo.jpg" alt="Project 1">
+            <h2>Project 1</h2>
+            <p>• Used Python to analyze 40k listings & 1 million reviews from Airbnb data in New York City, integrating supplementary crime & income data through ETL processes to create a combined dataset for modeling. <br>
+              • Performed extensive data cleaning, preprocessing & visualization, including feature engineering with Natural Language Processing for sentiment analysis of reviews & transforming unstructured listing columns into classifier-friendly features. <br>
+              • Developed, Tuned then evaluated multiple supervised Machine Learning classifiers (Logistic Regression, SVM, Ensemble/Boosting) from Sci-kit Learn to predict Superhost status, achieving 95% recall and 85% precision, & identified key features influencing Superhost status.</p>
+            <a href="https://github.com/afifshomali/NYC-Airbnb-Analysis-447" target="_blank" class="project-link">
+              <i class="fa-brands fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item" data-modal="project2">
+          <img src="./assets/heart-disease.jpg" alt="Project 2">
+          <div class="overlay">
+            <h3>Heart Disease Prediction Data Mining Project</h3>
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+          </div>
+        </div>
+
+        <div class="modal" id="project2">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="./assets/heart-disease.jpg" alt="Project 2">
+            <h2>Project 2</h2>
+            <p>• Used Python to clean & preprocess the UCI heart disease dataset & a cardiovascular disease dataset with 70k patient records(but no severity labels) & unified columns between datasets to enable model training<br>
+              • Tuned multiple supervised Machine Learning classifiers (Logistic Regression, SVM, Ensemble/Bagging/Boosting) from Sci-kit learn and implemented a Convolutional Neural Network using Pytorch achieving 90% recall and 75% F1 score.<br>
+              • Compared a Semi-Supervised (Pseudo labeling) approach to a Deep Learning CNN transfer learning approach in extending classification to severity of heart disease</p>
+            <a href="https://github.com/afifshomali/Heart-Disease-Analysis" target="_blank" class="project-link">
+              <i class="fa-brands fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item" data-modal="project3">
+          <img src="./assets/covid-narrative.jpg" alt="Project 3">
+          <div class="overlay">
+            <h3>Covid-19 Low-Income Job Market Narrative Visualization</h3>
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+          </div>
+        </div>
+
+        <div class="modal" id="project3">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="./assets/covid-narrative.jpg" alt="Project 3">
+            <h2>Project 3</h2>
+            <p>Narrative data visualization interactive slideshow demonstrating the impact of the Covid-19 pandemic on low-income jobs 
+              within the U.S. 
+              Each slide supports user interaction with annotations & details on demand.</p>
+            <a href="https://afifshomali.github.io/" target="_blank" class="project-link">
+              <i class="fa-brands fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item" data-modal="project4">
+          <img src="./assets/steam-logo.jpg" alt="Project 4">
+          <div class="overlay">
+            <h3>Steam GameBuddy WebApp</h3>
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+          </div>
+        </div>
+
+        <div class="modal" id="project4">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="./assets/steam-logo.jpg" alt="Project 4">
+            <h2>Project 4</h2>
+            <p>• Led a team of 4 in the successful full-cycle development of a web app hosted on GCP; enables users to 
+            quickly find video game recommendations based on similarity metrics for game features & friends’ ratings. <br>
+            • Utilized Python to build the application's data processing backend & data querying API; ensured seamless 
+                & efficient connectivity with the SQL relational database with over 10k rows also hosted on GCP. <br>
+              • Demonstrated effective leadership by ensuring team meets project deadlines and efficiently debugging 
+              issues related to the recommender system, connecting the app to the SQL instance, deploying the webapp.</p>
+            <a href="https://github.com/cs411-alawini/Steam-Gamebuddy-WebApp" target="_blank" class="project-link">
+              <i class="fa-brands fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+
+
+
+        <div class="project-item" data-modal="project5">
+          <img src="./assets/discord-logo.svg" alt="Project 5">
+          <div class="overlay">
+            <h3>Discord Sentiment Analysis Bot</h3>
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+          </div>
+        </div>
+
+        <div class="modal" id="project5">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="./assets/discord-logo.svg" alt="Project 5">
+            <h2>Project 5</h2>
+            <p>• In a team of 4, developed a Discord bot that provides real-time sentiment analysis of user messages using natural language processing and Machine Learning, allowing users to automatically moderate chatrooms. <br>
+              • Implemented efficient text processing pipeline ensuring bot returns sentiment outcome in under 3 seconds. <br>
+              • Achieved an accuracy of over 85% from a dataset of 100,000 messages, testing multiple classifiers (Logistic Regression, SVM, Random Forest) to maximize accuracy <br>
+              • Worked effectively as a team to define project goals, divide tasks, and ensure the successful completion of the project </p>
+            <a href="https://github.com/CS222-UIUC/Discord-Sentiment-Analysis-Bot" target="_blank" class="project-link">
+              <i class="fa-brands fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item" data-modal="project6">
+          <img src="./assets/covid-dashboard.jpg" alt="Project 6">
+          <div class="overlay">
+            <h3>Covid-19 Data Visualization Dashboard</h3>
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+          </div>
+        </div>
+
+        <div class="modal" id="project6">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="./assets/covid-dashboard.jpg" alt="Project 6">
+            <h2>Project 6</h2>
+            <p>Data Visualization Dashboard for Covid-19 Cases in the US, includes 3 total charts with 
+              support for cross-filtering & details on demand. 
+              Lets a viewer explore how their state is doing in regard to the Covid-19 pandemic.</p>
+            <a href="https://public.tableau.com/app/profile/afif.shomali/viz/USCovid-19CasesDashboard/Dashboard" target="_blank" class="project-link">
+              <i class="fa-brands fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Skills section with multi column layout  -->
+    <section id="skills" class="stripe">
+  <div class="skills-container"> 
+    <h2 class="skills-title">Skills</h2>
+    
+   
+    <div class="skills-grid">
+      <div class="skill-column">
+        <h3>Data Science Development</h3>
+        <div class="skill-icons">
+          <i class="fa-brands fa-python"></i>
+          <i class="fa-solid fa-database"></i>
+          <i class="fa-brands fa-square-git"></i>
+        </div>
+        <ul>
+          <li>Python Data Science Packages</li>
+          <li>SQL & Database interaction</li>
+          <li>Version control with Git</li>
+        </ul>
+      </div>
+
+      <div class="skill-column">
+        <h3>ML & AI Engineering</h3>
+        <div class="skill-icons">
+          <i class="fa-brands fa-python"></i>
+          <i class="fa-solid fa-cloud"></i>
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <ul>
+          <li>LLMs</li>
+          <li>Deploying ML models</li>
+          <li>Developing RAG systems</li>
+        </ul>
+      </div>
+
+      <div class="skill-column">
+        <h3>Interpersonal</h3>
+        <div class="skill-icons">
+          <i class="fa-solid fa-chart-line"></i>
+          <i class="fa-solid fa-lightbulb"></i>
+          <i class="fa-solid fa-person-chalkboard"></i>
+        </div>
+        <ul>
+          <li>Data Driven insights</li>
+          <li>Requirement gathering & Solution Design</li>
+          <li>Stakeholder interaction</li>
+        </ul>
+      </div>
+    </div> <!-- ✅ close .skills-grid -->
+  </div>
+</section>
+
+
+    <!-- Carousel section for stuff I do outside of work -->
+    <!-- Photography Carousel Section -->
+    <section id="photography" class="stripe">
+      <h2 class="photography-title">Photography</h2>
+      <div class="carousel">
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <div class="carousel-track">
+          <div class="carousel-slide active">
+            <img src="./assets/img1.jpg" alt="Photo 1">
+            <div class="slide-caption">Slovakia</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="./assets/img2.jpg" alt="Photo 2">
+            <div class="slide-caption">Wadi Rum</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="./assets/img3.jpg" alt="Photo 3">
+            <div class="slide-caption">Gdansk</div>
+          </div>
+        </div>
+
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </section>
+
+
+    <!-- Contact Section with a Video Background  -->
+    <section id="contact" class="stripe">
+        <video autoplay muted loop playsinline id="contact-video">
+            <source src="./assets/backgroundvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="contact-content">
+            <form class="contact-form">
+            <h2>Contact Me</h2>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer with links to social media using icons -->
+    <footer id="footer">
+        <p>Built with Html, SCSS & Javascript</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+
+</body>
 </html>
